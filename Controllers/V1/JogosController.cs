@@ -151,10 +151,11 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// <param name="tipoJogo">Tipo do jogo buscado</param>
         /// <response code="200">Retorna o jogo filtrado</response>
         /// <response code="204">Caso não haja jogo com este id</response>   
+        /// 
         //[HttpGet("tipojogo/{tipoJogo:string}")]
-        //public async Task<ActionResult<JogoViewModel>> ObterPorTipo([FromRoute] string tipoJogo, [FromQuery, Range(1, int.MaxValue)] int pagina = 1, [FromQuery, Range(1, 50)] int quantidade = 5)
+        //public async Task<ActionResult<JogoViewModel>> ObterPorTipo([FromRoute] string tipoJogo)
         //{
-        //    var jogo = await _jogoService.ObterPorTipo(tipoJogo, pagina, quantidade);
+        //    var jogo = await _jogoService.ObterPorTipo(tipoJogo);
         //    if (jogo == null)
         //        return NoContent();
 

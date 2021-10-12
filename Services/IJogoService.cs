@@ -15,6 +15,6 @@ namespace ApiCatalogoJogos.Services
         Task Atualizar(Guid id, JogoInputModel jogo);
         Task Atualizar(Guid id, double preco);
         Task Remover(Guid id);
-        Task<JogoViewModel> ObterPorTipo(string tipo, int pagina, int Quantidade);
+        Task<List<JogoViewModel>> ObterPorTipo(string tipo);
     }
 }

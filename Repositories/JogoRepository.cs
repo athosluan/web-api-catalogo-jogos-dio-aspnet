@@ -67,10 +67,9 @@ namespace ApiCatalogoJogos.Repositories
             return Task.CompletedTask;
         }
 
-        public Task<Jogo> ObterPorTipo(string tipoJogo, int pagina, int quantidade)
+        public Task<List<Jogo>> ObterPorTipo(string tipoJogo)
         {
-            return null;
-                //Task.FromResult(jogos.Values.Where(jogo => jogo.TipoJogo.Equals(tipoJogo)));
+            return Task.FromResult(jogos.Values.Where(jogo => jogo.TipoJogo.Equals(tipoJogo)).ToList());
         }
 
         public void Dispose()

@@ -14,6 +14,6 @@ namespace ApiCatalogoJogos.Repositories
         Task Inserir(Jogo jogo);
         Task Atualizar(Jogo jogo);
         Task Remover(Guid id);
-        Task<Jogo> ObterPorTipo(string tipoJogo, int pagina, int quantidade);
+        Task<List<Jogo>> ObterPorTipo(string tipoJogo);
     }
 }

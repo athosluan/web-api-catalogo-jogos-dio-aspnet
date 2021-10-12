@@ -115,18 +115,18 @@ namespace ApiCatalogoJogos.Services
             await _jogoRepository.Remover(id);
         }
 
-        public async Task<JogoViewModel> ObterPorTipo(string tipoJogo, int pagina = 1, int quantidade = 5)
+        public async Task<List<JogoViewModel>> ObterPorTipo(string tipoJogo)
         {
-            var jogos = await _jogoRepository.ObterPorTipo(tipoJogo, pagina, quantidade);
+            var jogos = await _jogoRepository.ObterPorTipo(tipoJogo);
 
-            return new JogoViewModel
+            return jogos.Select(jogo => new JogoViewModel
             {
-                Id = jogos.Id,
-                Nome = jogos.Nome,
-                Produtora = jogos.Produtora,
-                Preco = jogos.Preco,
-                TipoJogo = jogos.TipoJogo
-            };
+                Id = jogo.Id,
+                Nome = jogo.Nome,
+                Produtora = jogo.Produtora,
+                Preco = jogo.Preco,
+                TipoJogo = jogo.TipoJogo
+            }).ToList();
         }
 
         public void Dispose()
